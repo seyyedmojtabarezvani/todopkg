@@ -16,7 +16,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "rezvani\\todopkg\\TodopkgServiceProvider"
+                "Rezvani\\Todopkg\\TodopkgServiceProvider"
             ]
         }
     },
