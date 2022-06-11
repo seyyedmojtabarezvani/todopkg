@@ -1,6 +1,6 @@
 <?php
 
-namespace Mojtaba\Todopkg\Tests;
+namespace Rezvani\Todopkg\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;

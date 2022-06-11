@@ -4,8 +4,8 @@ namespace Tests\Unit;
 
 use Illuminate\Support\Facades\Auth;
 use Tests\TestCase;
-use Mojtaba\Todopkg\TaskHandler;
-use Mojtaba\Todopkg\LabelHandler;
+use Rezvani\Todopkg\TaskHandler;
+use Rezvani\Todopkg\LabelHandler;
 
 class TodopkgUnitTest extends TestCase
 {

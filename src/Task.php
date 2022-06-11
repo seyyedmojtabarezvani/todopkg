@@ -1,6 +1,6 @@
 <?php
 
-namespace Mojtaba\Todopkg;
+namespace Rezvani\Todopkg;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,6 +10,6 @@ class Task extends Model
 
     public function label()
     {
-        return $this->belongsTo('Mojtaba\Todopkg\Label');
+        return $this->belongsTo('Rezvani\Todopkg\Label');
     }
 }

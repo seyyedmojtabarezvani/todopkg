@@ -1,6 +1,6 @@
 <?php
 
-namespace Mojtaba\Todopkg;
+namespace Rezvani\Todopkg;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Mojtaba\Todopkg\Notifications;
+namespace Rezvani\Todopkg\Notifications;
 
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Mojtaba\Todopkg\Task;
+use Rezvani\Todopkg\Task;
 
 class TaskClosedNotification extends Notification
 {

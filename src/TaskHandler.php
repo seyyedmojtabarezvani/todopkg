@@ -1,13 +1,13 @@
 <?php
 
-namespace Mojtaba\Todopkg;
+namespace Rezvani\Todopkg;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Log;
-use Mojtaba\Todopkg\Notifications\TaskClosedNotification;
-use Mojtaba\Todopkg\Task;
-use Mojtaba\Todopkg\Label;
+use Rezvani\Todopkg\Notifications\TaskClosedNotification;
+use Rezvani\Todopkg\Task;
+use Rezvani\Todopkg\Label;
 
 class TaskHandler
 {

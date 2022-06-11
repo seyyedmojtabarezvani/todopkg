@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Mojtaba\Todopkg\Controllers\MainController;
+use Rezvani\Todopkg\Controllers\MainController;
 
 Route::get('/todo', [MainController::class, 'index'])->name('index');
 Route::post('/add-label', [MainController::class, 'addLabel'])->name('addLabel');

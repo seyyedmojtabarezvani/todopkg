@@ -1,11 +1,11 @@
 <?php
 
-namespace Mojtaba\Todopkg\Controllers;
+namespace Rezvani\Todopkg\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Mojtaba\Todopkg\TaskHandler;
-use Mojtaba\Todopkg\LabelHandler;
+use Rezvani\Todopkg\TaskHandler;
+use Rezvani\Todopkg\LabelHandler;
 
 class MainController extends Controller
 {

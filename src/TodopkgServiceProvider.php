@@ -1,6 +1,6 @@
 <?php
 
-namespace Mojtaba\Todopkg;
+namespace Rezvani\Todopkg;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +44,6 @@ class TodopkgServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('Mojtaba\Todopkg\Controllers\MainController');
+        $this->app->make('Rezvani\Todopkg\Controllers\MainController');
     }
 }

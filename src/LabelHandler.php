@@ -1,10 +1,10 @@
 <?php
 
-namespace Mojtaba\Todopkg;
+namespace Rezvani\Todopkg;
 
 use Illuminate\Support\Facades\Auth;
-use Mojtaba\Todopkg\Label;
-use Mojtaba\Todopkg\Task;
+use Rezvani\Todopkg\Label;
+use Rezvani\Todopkg\Task;
 
 class LabelHandler
 {
