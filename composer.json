@@ -12,5 +12,18 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.4"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "rezvani\\todopkg\\TodopkgServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Rezvani\\Todopkg\\": "src/",
+            "Rezvani\\Todopkg\\Tests\\": "tests/"
+        }
     }
 }
