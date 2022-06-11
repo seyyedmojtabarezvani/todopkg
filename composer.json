@@ -1,0 +1,16 @@
+{
+    "name": "mojtaba/todopkg",
+    "description": "TodoPkg - My Todolist Package",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Seyyed Mojtaba Rezvani",
+            "email": "s_mojtaba_rez@yahoo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.4"
+    }
+}
