@@ -17,10 +17,6 @@ class TodopkgServiceProvider extends ServiceProvider
         $this->registerRoutes();
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
         $this->loadMigrationsFrom(__DIR__ . '/migrations');
-
-        $this->publishes([
-            __DIR__ . '/config/config.php' => config_path('todopkg.php'),
-        ], 'config');
     }
 
     protected function registerRoutes()
