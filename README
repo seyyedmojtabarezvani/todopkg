@@ -1,0 +1,16 @@
+composer create-project --prefer-dist laravel/laravel:^7.0 blog
+
+In composer.json in require:
+"rezvani/todopkg": "^1.0"
+
+Then update via composer:
+composer update
+
+Substitute your .env file with the current project
+
+In phpunit.xml:
+
+<testsuite name="Todopkg">
+<directory suffix="Test.php">./vendor/rezvani/todopkg/tests</directory>
+</testsuite>
+
