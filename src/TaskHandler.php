@@ -16,7 +16,7 @@ class TaskHandler
         $task = new Task;
         $task->title = $data['title'];
         $task->description = $data['description'];
-        $task->status = $data['status'] === 'open' ? config('todopkg.task_status.open') : config('todopkg.task_status.close');
+        $task->status = $data['status'] === 'open' ? 1 : 0;
         $task->labels = $this->getLabelIDsFromNames($data['labels']) ?? null;
         // Alternatively if front-end sends label IDs directly
         // $task->labels = $this->formatLabelIDs($data['labels']) ?? null;
@@ -134,7 +134,7 @@ class TaskHandler
             return null;
         }
 
-        $task->status = $data['status'] === 'open' ? config('todopkg.task_status.open') : config('todopkg.task_status.close');
+        $task->status = $data['status'] === 'open' ? 1 : 0;
 
         $task->save();
 
