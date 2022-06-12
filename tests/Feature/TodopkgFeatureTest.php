@@ -8,30 +8,11 @@ use Tests\TestCase;
 
 class TodopkgFeatureTest extends TestCase
 {
-    private $api_token = "wFZdP80EyiG2X54mBA75sceIOPbdGxUBdoscytCUoGhp7y3vVBM2aZCglf7x";
-
-    /**
-     * Test to add a task.
-     *
-     * @return void
-     */
-    public function testAddTask()
+    public function setUp(): void
     {
-        $response = $this->withHeaders([
-            'Accept' => 'application/json',
-            'Authorization' => "Bearer {$this->api_token}",
-        ])->post('/add-task', [
-            'title' => 'edit task 8',
-            'description' => 'due 2022/06/11',
-            'status' => 'open',
-            'labels' => 'tree,cloud,flower'
-        ]);
-
-        $response
-            ->assertStatus(200)
-            ->assertJson([
-                'success' => true,
-            ]);
+        parent::setUp();
+        $this->$api_token = "wFZdP80EyiG2X54mBA75sceIOPbdGxUBdoscytCUoGhp7y3vVBM2aZCglf7x";
+        $this->$generated_label = "";
     }
 
     /**
@@ -43,11 +24,12 @@ class TodopkgFeatureTest extends TestCase
      */
     public function testAddLabel()
     {
+        $this->$generated_label = $this->generateRandomString();
         $response = $this->withHeaders([
             'Accept' => 'application/json',
             'Authorization' => "Bearer {$this->api_token}",
         ])->post('/add-label', [
-            'name' => $this->generateRandomString(),
+            'name' => $this->$generated_label,
         ]);
 
         $response
@@ -69,6 +51,30 @@ class TodopkgFeatureTest extends TestCase
     }
 
     /**
+     * Test to add a task.
+     *
+     * @return void
+     */
+    public function testAddTask()
+    {
+        $response = $this->withHeaders([
+            'Accept' => 'application/json',
+            'Authorization' => "Bearer {$this->api_token}",
+        ])->post('/add-task', [
+            'title' => 'edit task 8',
+            'description' => 'due 2022/06/11',
+            'status' => 'open',
+            'labels' => $this->$generated_label
+        ]);
+
+        $response
+            ->assertStatus(200)
+            ->assertJson([
+                'success' => true,
+            ]);
+    }
+
+    /**
      * Test to add a label to a task.
      *
      * @return void
@@ -80,7 +86,7 @@ class TodopkgFeatureTest extends TestCase
             'Authorization' => "Bearer {$this->api_token}",
         ])->post('/add-task-labels', [
             'task_id' => '7',
-            'labels' => 'cloud, flower, droplet',
+            'labels' => $this->$generated_label,
         ]);
 
         $response
@@ -206,5 +212,10 @@ class TodopkgFeatureTest extends TestCase
                 'labels',
                 'user_id',
             ]);
+    }
+
+    public function tearDown(): void
+    {
+        parent::tearDown();
     }
 }

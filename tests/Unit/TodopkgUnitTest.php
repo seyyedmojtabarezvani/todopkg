@@ -14,6 +14,33 @@ class TodopkgUnitTest extends TestCase
         parent::setUp();
         $this->task = new TaskHandler;
         $this->label = new LabelHandler;
+        $this->generated_label = "";
+    }
+
+    /**
+     * Test create() function in LabelHandler.
+     * 
+     * Label name must be unique
+     *
+     * @return void
+     */
+    public function testCreateLabelFunction()
+    {
+        $this->generated_label = $this->generateRandomString();
+        $data = ['name' => $this->generated_label];
+        Auth::loginUsingId(1);
+        $this->assertNotNull($this->label->create($data));
+    }
+
+    private function generateRandomString($length = 10)
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 
     /**
@@ -62,31 +89,6 @@ class TodopkgUnitTest extends TestCase
         $data = ['task_id' => '1', 'status' => 'open'];
         Auth::loginUsingId(1);
         $this->assertNotNull($this->task->editTaskStatus($data));
-    }
-
-    /**
-     * Test create() function in LabelHandler.
-     * 
-     * Label name must be unique
-     *
-     * @return void
-     */
-    public function testCreateLabelFunction()
-    {
-        $data = ['name' => $this->generateRandomString()];
-        Auth::loginUsingId(1);
-        $this->assertNotNull($this->label->create($data));
-    }
-
-    private function generateRandomString($length = 10)
-    {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
-        }
-        return $randomString;
     }
 
     public function tearDown(): void
