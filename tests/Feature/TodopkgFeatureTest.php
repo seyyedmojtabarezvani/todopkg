@@ -77,7 +77,7 @@ class TodopkgFeatureTest extends TestCase
             'Accept' => 'application/json',
             'Authorization' => "Bearer {$this->api_token}",
         ])->post('/add-task-labels', [
-            'task_id' => '7',
+            'task_id' => '1',
             'labels' => 'general',
         ]);
 
@@ -99,7 +99,7 @@ class TodopkgFeatureTest extends TestCase
             'Accept' => 'application/json',
             'Authorization' => "Bearer {$this->api_token}",
         ])->post('/edit-task', [
-            'task_id' => '8',
+            'task_id' => '1',
             'title' => 'Test changed it',
             'description' => 'Merci test',
         ]);
@@ -124,7 +124,7 @@ class TodopkgFeatureTest extends TestCase
             'Accept' => 'application/json',
             'Authorization' => "Bearer {$this->api_token}",
         ])->post('/edit-task-status', [
-            'task_id' => '9',
+            'task_id' => '1',
             'status' => 'close',
         ]);
 
